@@ -9,4 +9,4 @@ RUN emerge dev-libs/libxml2 dev-lang/ruby \
 	&& useradd -m -s /bin/bash user
 USER user
 WORKDIR /home/user
-ENTRYPOINT ["/bin/bash", "-c", "bundle install --path vendor/bundle && exec bundle exec rake -- \"$@\""]
+CMD ["/bin/bash"]
