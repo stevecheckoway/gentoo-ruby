@@ -2,7 +2,7 @@
 FROM gentoo/portage:latest as portage
 LABEL maintainer="Stephen Checkoway <s@pahtak.org>"
 FROM gentoo/stage3-amd64:latest
-COPY --from=portage /usr/portage /usr/portage
+COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 RUN emerge dev-libs/libxml2 dev-lang/ruby \
 	&& gem install bundler \
 	&& rm -rf /usr/portage \
